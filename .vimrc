@@ -17,6 +17,12 @@ set autoindent
 " Kopiowanie do systemowego schowka
 set clipboard=unnamedplus
 
+" Persistent undo
+set undofile                " Save undo's after file closes
+set undodir=~/.undo     " where to save undo histories
+set undolevels=1000         " How many undos
+set undoreload=10000        " number of lines to save for undo
+
 " Zaznacz 80 kolumnę
 set colorcolumn=80
 
@@ -71,13 +77,12 @@ set matchtime=4 "" Decrease matching time.
 " Omnicomplete zmiana skrótu klawiszowego z Ctrl+x Ctrl+o na Ctrl+space
 inoremap <Nul> <C-x><C-o>
 
-"" completion {{{
+"" completion
 set complete=.,w,b,i,d,] "" Specify complete sources.
 set completeopt=menu,preview "" Specify completion look.
 
 set showfulltag "" Show tag-name and search pattern.
 set taglength=0 "" Complete all tags.
-"" }}}
 
 " Omnicomplete zmiana tła i czcionki
 :hi Pmenu ctermfg=white ctermbg=darkgrey guibg=#ffffff
