@@ -65,14 +65,33 @@ set incsearch
 " When pattern ccontains only a-z; case does not matter
 set ignorecase
 
-" When pattern cconstains any of A-Z; case matters
+" When pattern constains any of A-Z; case matters
 set smartcase
 
-"" matching {{{
+"" matching
 set showmatch "" Show matching.
 set matchpairs+=<:> "" Match <,> too.
 set matchtime=4 "" Decrease matching time.
-"" }}}
+
+" Disable gVim gui elements
+if has("gui_running")
+  set antialias "" Enable antialiasing.
+  set guifont=Inconsolata\ 10 "" Specify colorscheme.
+  set guioptions+=c "" Use console dialogs.
+  set guioptions-=e "" Disable GUI-tab-pages.
+  set guioptions+=i "" Use a Vim icon.
+  set guioptions-=m "" Disable main menu.
+  set guioptions+=g "" Make item grey if not active.
+  set guioptions-=T "" Disable toolbar.
+  set guioptions-=r "" Disable right-hand scrollbar.
+  set guioptions-=R "" Same as above.
+  set guioptions-=l "" Disable left-hand scrollbar.
+  set guioptions-=L "" Same as above.
+  set guioptions-=b "" Disable bottom scrollbar.
+  set guioptions-=v "" Use a vertical button layout.
+
+  set guipty "" Use pseudo-tty for I/O.
+endif
 
 " Omnicomplete zmiana skrótu klawiszowego z Ctrl+x Ctrl+o na Ctrl+space
 inoremap <Nul> <C-x><C-o>
