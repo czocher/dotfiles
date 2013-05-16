@@ -116,6 +116,9 @@ set taglength=0 "" Complete all tags.
 :hi Pmenu ctermfg=white ctermbg=darkgrey guibg=#ffffff
 :hi PmenuSel ctermfg=7 ctermbg=4 guibg=#555555 guifg=#ffffff
 
+" Enable Omnicomplete
+set omnifunc=syntaxcomplete#Complete
+
 " Make dla Pythona
 autocmd BufRead *.py set makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
 autocmd BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
