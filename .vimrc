@@ -2,7 +2,12 @@
 execute pathogen#infect()
 
 " Schemat kolorów
-:colorscheme torte
+let g:solarized_termcolors=256
+colorscheme solarized
+set background=dark
+
+" Disable python folding
+let g:pymode_folding = 0
 
 set nocompatible   " Disable vi-compatibility
 set laststatus=2   " Always show the statusline
