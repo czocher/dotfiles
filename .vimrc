@@ -8,6 +8,8 @@ set background=dark
 
 " Disable python folding
 let g:pymode_folding = 0
+let g:pymode_rope_auto_project = 0
+
 
 set nocompatible   " Disable vi-compatibility
 set laststatus=2   " Always show the statusline
@@ -104,10 +106,18 @@ endif
 
 " Omnicomplete zmiana skrótu klawiszowego z Ctrl+x Ctrl+o na Ctrl+space
 inoremap <Nul> <C-x><C-o>
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 "" completion
 set complete=.,w,b,i,d,] "" Specify complete sources.
-set completeopt=menu,preview "" Specify completion look.
+set completeopt=longest,menuone
+
+"set completeopt=menu,preview "" Specify completion look.
 
 set showfulltag "" Show tag-name and search pattern.
 set taglength=0 "" Complete all tags.
@@ -174,7 +184,7 @@ endif
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Dopełnianie nawiasów etc
-imap { {}<LEFT>
-imap ( ()<LEFT>
-inoremap " ""<LEFT>
-inoremap ' ''<LEFT>
+"imap { {}<LEFT>
+"imap ( ()<LEFT>
+"inoremap " ""<LEFT>
+"inoremap ' ''<LEFT>
