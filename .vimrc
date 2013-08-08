@@ -13,7 +13,7 @@ let g:pymode_rope_auto_project = 0
 
 set nocompatible   " Disable vi-compatibility
 set laststatus=2   " Always show the statusline
-set encoding=utf-8 " Necessary to show Unicode glyphs"""
+set encoding=utf-8 " Necessary to show Unicode glyphs
 
 " Wczytuj odpowiednie wtyczki zważywszy na typ pliku
 filetype plugin indent on
@@ -30,7 +30,7 @@ set clipboard=unnamedplus
 
 " Persistent undo
 set undofile                " Save undo's after file closes
-set undodir=~/.undo     " where to save undo histories
+set undodir=~/.vim/undo     " where to save undo histories
 set undolevels=1000         " How many undos
 set undoreload=10000        " number of lines to save for undo
 
