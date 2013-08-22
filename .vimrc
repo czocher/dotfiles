@@ -7,8 +7,10 @@ colorscheme solarized
 set background=dark
 
 " Disable python folding
+let g:pymode_rope = 0
 let g:pymode_folding = 0
 let g:pymode_rope_auto_project = 0
+let g:pymode_rope_guess_project = 0
 
 set nocompatible   " Disable vi-compatibility
 set laststatus=2   " Always show the statusline
