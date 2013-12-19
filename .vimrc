@@ -174,7 +174,7 @@ function! TEXmode()
   setlocal wrap
 endfunction
 
-au FileType tex call TEXmode()
+au FileType plaintex call TEXmode()
 
 " Powracanie do ostatnio edytowanego miejsca w pliku przy otwarciu
 if has("autocmd")
