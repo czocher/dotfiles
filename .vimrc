@@ -184,6 +184,8 @@ endif
 " Usuń spacje na końcu linii przy zapisie
 autocmd BufWritePre * :%s/\s\+$//e
 
+imap <M-Space> <Space>
+
 " Dopełnianie nawiasów etc
 "imap { {}<LEFT>
 "imap ( ()<LEFT>
