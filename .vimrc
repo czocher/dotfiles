@@ -11,6 +11,7 @@ let g:pymode_rope = 0
 let g:pymode_folding = 0
 let g:pymode_rope_auto_project = 0
 let g:pymode_rope_guess_project = 0
+let g:pymode_lint_ignore = "E501"
 
 set nocompatible   " Disable vi-compatibility
 set laststatus=2   " Always show the statusline
