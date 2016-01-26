@@ -13,6 +13,4 @@ export PATH
 alias gcc='gcc -Wall -Wextra -pedantic'
 alias vim='vimx'
 alias python3='ipython3'
-alias python='ipython3'
-
-ponysay --quote luna
+alias python='ipython2'
