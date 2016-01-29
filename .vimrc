@@ -19,13 +19,13 @@ set background=dark
 " ]]            Jump on next class or function (normal, visual, operator modes)
 " [M            Jump on previous class or method (normal, visual, operator modes)
 " ]M            Jump on next class or method (normal, visual, operator modes)
-let g:pymode_rope = 1
+let g:pymode_rope = 0
 
 " Documentation
 let g:pymode_doc = 1
 let g:pymode_doc_key = 'K'
 
-"Linting
+" Linting
 let g:pymode_lint = 1
 let g:pymode_lint_checker = "pyflakes,pep8"
 " Auto check on save
@@ -51,6 +51,7 @@ let g:pymode_folding = 0
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<C-d>"
 let g:UltiSnipsJumpBackwardTrigger="<C-a>"
+ let g:UltiSnipsUsePythonVersion = 2
 
 set nocompatible   " Disable vi-compatibility
 set laststatus=2   " Always show the statusline
