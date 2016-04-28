@@ -28,6 +28,7 @@ let g:pymode_doc_key = 'K'
 " Linting
 let g:pymode_lint = 1
 let g:pymode_lint_checker = "pyflakes,pep8"
+
 " Auto check on save
 let g:pymode_lint_write = 1
 
@@ -51,7 +52,7 @@ let g:pymode_folding = 0
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<C-d>"
 let g:UltiSnipsJumpBackwardTrigger="<C-a>"
- let g:UltiSnipsUsePythonVersion = 2
+let g:UltiSnipsUsePythonVersion = 2
 
 set nocompatible   " Disable vi-compatibility
 set laststatus=2   " Always show the statusline
@@ -159,7 +160,7 @@ inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
 set complete=.,w,b,i,d,] "" Specify complete sources.
 set completeopt=longest,menuone
 
-"set completeopt=menu,preview "" Specify completion look.
+set completeopt=menu,preview "" Specify completion look.
 
 set showfulltag "" Show tag-name and search pattern.
 set taglength=0 "" Complete all tags.
@@ -170,10 +171,6 @@ set taglength=0 "" Complete all tags.
 
 " Enable Omnicomplete
 set omnifunc=syntaxcomplete#Complete
-
-" Make dla Pythona
-autocmd BufRead *.py set makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
-autocmd BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 
 " Sprawdzanie pisowni po wciśnięciu F7
 set spelllang=pl,en
@@ -200,15 +197,6 @@ endfunction
 " Zaczynaj nowy plik w trybie Insert
 autocmd BufNewFile * startinsert
 
-" Wcięcia w stylu GNU
-function! GnuIndent()
-    setlocal cinoptions=>4,n-2,{2,^-2,:2,=2,g0,h2,p5,t0,+2,(0,u0,w1,m1
-    setlocal shiftwidth=2
-    setlocal tabstop=8
-endfunction
-
-au FileType c,cpp call GnuIndent()
-
 " TEXmode
 function! TEXmode()
   setlocal linebreak
@@ -226,9 +214,3 @@ endif
 autocmd BufWritePre * :%s/\s\+$//e
 
 imap <M-Space> <Space>
-
-" Dopełnianie nawiasów etc
-"imap { {}<LEFT>
-"imap ( ()<LEFT>
-"inoremap " ""<LEFT>
-"inoremap ' ''<LEFT>

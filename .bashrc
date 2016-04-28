@@ -15,6 +15,7 @@ PS1="\[\033[36m\][\[\033[m\]\[\033[1;33m\]\u@\h\[\033[m\] \[\033[32m\]\W\[\033[m
 PATH=$PATH:/opt/callibre
 export PATH
 
+alias g++='g++ -Wall -Wextra -pedantic -std=c++14'
 alias gcc='gcc -Wall -Wextra -pedantic'
 alias vim='vimx'
 alias python3='ipython3'
