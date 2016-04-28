@@ -12,5 +12,8 @@ ln -s $PWD/.vim ~/.vim
 ln -s $PWD/.bashrc ~/.bashrc
 ln -s $PWD/.bash ~/.bash
 ln -s $PWD/.gitconfig ~/.gitconfig
+ln -s $PWD/.gitmessage ~/.gitmessage
+
+git config --global commit.template ~/.gitmessage
 
 echo "Finished"
