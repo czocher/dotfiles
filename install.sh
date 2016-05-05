@@ -18,3 +18,11 @@ ln -s $PWD/.gitmessage ~/.gitmessage
 git config --global commit.template ~/.gitmessage
 
 echo "Finished"
+
+echo "Do you want to install rust? (y/n)"
+read response
+
+if [ response='y' ]
+then
+  curl https://sh.rustup.rs -sSf | sh
+fi
