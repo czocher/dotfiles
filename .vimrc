@@ -2,9 +2,9 @@
 execute pathogen#infect()
 
 " Schemat kolorów
-let g:solarized_termcolors=256
-colorscheme solarized
-set background=dark
+"let g:solarized_termcolors=256
+"colorscheme solarized
+"set background=dark
 
 " Python-mode
 " Activate rope
@@ -214,3 +214,6 @@ endif
 autocmd BufWritePre * :%s/\s\+$//e
 
 imap <M-Space> <Space>
+
+" Blowfish2 jako algorytm szyfrowania plików
+cm=blowfish2
