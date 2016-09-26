@@ -216,4 +216,4 @@ autocmd BufWritePre * :%s/\s\+$//e
 imap <M-Space> <Space>
 
 " Blowfish2 jako algorytm szyfrowania plików
-cm=blowfish2
+set cm=blowfish2
