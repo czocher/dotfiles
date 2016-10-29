@@ -13,6 +13,8 @@
 	email = czochanski@gmail.com
 	signingkey = 82843164B26A29FB
 [commit]
-	gpgsign = true
+	gpgSign = true
 [gpg]
 	program = gpg2
+[tag]
+	forceSignAnnotated = true
