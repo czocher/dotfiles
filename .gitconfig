@@ -1,5 +1,5 @@
 [core]
-	editor = vim
+	editor = vimx
 [push]
 	default = simple
 [diff]
@@ -8,3 +8,11 @@
 	tool = vimdiff
 [alias]
 	cleanup = !git branch --merged master | grep -v master | xargs -n 1 git branch -d
+[user]
+	name = Paweł Czochański
+	email = czochanski@gmail.com
+	signingkey = 82843164B26A29FB
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg2
