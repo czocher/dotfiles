@@ -18,6 +18,13 @@ ln -s $PWD/.gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 ln -s $PWD/.gitconfig ~/.gitconfig
 ln -s $PWD/.gitmessage ~/.gitmessage
 
+# Set ownership to your own user and primary group
+chown -R "$USER:$(id -gn)" ~/.gnupg
+# Set permissions to read, write, execute for only yourself, no others
+chmod 700 ~/.gnupg
+# Set permissions to read, write for only yourself, no others
+chmod 600 ~/.gnupg/*
+
 git config --global commit.template ~/.gitmessage
 
 echo "Finished"
