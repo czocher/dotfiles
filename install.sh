@@ -32,7 +32,7 @@ echo "Finished"
 echo "Do you want to install rust? (y/n)"
 read response
 
-if [ response='y' ]
+if [ "$response" == 'y' ]
 then
   curl https://sh.rustup.rs -sSf | sh
 fi
