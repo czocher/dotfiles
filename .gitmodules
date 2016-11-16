@@ -21,7 +21,7 @@
 	url = https://github.com/othree/html5.vim.git
 [submodule ".vim/bundle/vim-matchit"]
 	path = .vim/bundle/vim-matchit
-	url = https://github.com/edsono/vim-matchit.git
+	url = https://github.com/geoffharcourt/vim-matchit.git
 [submodule ".vim/bundle/powerline"]
 	path = .vim/bundle/powerline
 	url = https://github.com/Lokaltog/powerline.git
