@@ -3,9 +3,9 @@
 [push]
 	default = simple
 [diff]
-	tool = vimdiff
+	tool = meld
 [merge]
-	tool = vimdiff
+	tool = meld
 	ff = only
 [alias]
 	cleanup = !git branch --merged master | grep -v master | xargs -n 1 git branch -d
@@ -13,8 +13,6 @@
 	name = Paweł Czochański
 	email = czochanski@gmail.com
 	signingkey = 82843164B26A29FB
-[commit]
-	gpgSign = true
 [gpg]
 	program = gpg2
 [tag]
