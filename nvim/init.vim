@@ -1,5 +1,18 @@
 " Set plugins, :PlugInstall to install
+
 call plug#begin('~/.config/nvim/plugged')
+
+Plug 'vim-scripts/tlib'
+
+Plug 'vim-scripts/AutoComplPop'
+
+Plug 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
+
+Plug 'klen/python-mode'
+
+Plug 'tomtom/tcomment_vim'
+
+Plug 'MarcWeber/vim-addon-mw-utils'
 
 Plug 'leafgarland/typescript-vim'
 
