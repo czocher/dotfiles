@@ -1,5 +1,5 @@
 [core]
-	editor = vimx
+	editor = nvim
 [push]
 	default = simple
 [diff]
