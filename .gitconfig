@@ -10,8 +10,7 @@
 [alias]
 	cleanup = !git branch --merged master | grep -v master | xargs -n 1 git branch -d
 [user]
-	name = Paweł Czochański
-	email = czochanski@gmail.com
+	name = Paweł Jan Czochański
 	signingkey = 82843164B26A29FB
 [gpg]
 	program = gpg2

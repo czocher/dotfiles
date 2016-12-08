@@ -9,12 +9,13 @@ rm -rf ~/.gnupg/gpg.conf ~/.gnupg/gpg-agent.conf
 echo "Installing new config"
 ln -s $PWD/.bashrc ~/.bashrc
 ln -s $PWD/.bash ~/.bash
-mkdir ~/.gnupg
+mkdir -p ~/.gnupg
 ln -s $PWD/.gnupg/gpg.conf ~/.gnupg/gpg.conf
 ln -s $PWD/.gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 ln -s $PWD/.gitconfig ~/.gitconfig
 ln -s $PWD/.gitmessage ~/.gitmessage
 ln -s $PWD/nvim ~/.config/nvim
+curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Set ownership to your own user and primary group
 chown -R "$USER:$(id -gn)" ~/.gnupg
