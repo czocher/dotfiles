@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dnf install yubikey-personalization-gui gimp libreoffice git yakuake rust vim vim-X11 meld xclip
+dnf install yubikey-personalization-gui gimp libreoffice git yakuake rust vim vim-X11 meld xclip python3-ipython python-ipython
 
 yum -y install epel-release
 curl -o /etc/yum.repos.d/dperson-neovim-epel-7.repo https://copr.fedorainfracloud.org/coprs/dperson/neovim/repo/epel-7/dperson-neovim-epel-7.repo

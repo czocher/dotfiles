@@ -24,6 +24,6 @@ export PATH
 alias g++='g++ -Wall -Wextra -pedantic -std=c++14'
 alias gcc='gcc -Wall -Wextra -pedantic'
 alias vim='nvim'
-alias python3='ipython3'
-alias python='ipython2'
+alias python='ipython3'
+alias python2='ipython2'
 alias gpg='gpg2'

@@ -2,17 +2,27 @@
 
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'vim-scripts/tlib'
+Plug 'tpope/vim-sensible'
+
+Plug 'altercation/vim-colors-solarized'
+
+Plug 'vim-airline/vim-airline'
+
+Plug 'townk/vim-autoclose'
 
 Plug 'vim-scripts/AutoComplPop'
+
+Plug 'tomtom/tcomment_vim'
+
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+
+Plug 'geoffharcourt/vim-matchit'
+
+" Language plugins
 
 Plug 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
 
 Plug 'klen/python-mode'
-
-Plug 'tomtom/tcomment_vim'
-
-Plug 'MarcWeber/vim-addon-mw-utils'
 
 Plug 'leafgarland/typescript-vim'
 
@@ -20,21 +30,9 @@ Plug 'rust-lang/rust.vim'
 
 Plug 'vim-scripts/pythoncomplete'
 
-Plug 'honza/vim-snippets'
-
-Plug 'SirVer/ultisnips'
-
-Plug 'vim-airline/vim-airline'
-
 Plug 'klen/python-mode'
 
-Plug 'geoffharcourt/vim-matchit'
-
 Plug 'othree/html5.vim'
-
-Plug 'altercation/vim-colors-solarized'
-
-Plug 'townk/vim-autoclose'
 
 call plug#end()
 
@@ -131,6 +129,13 @@ imap <silent><F7> <ESC>:setlocal spell!<CR>i<right>
 " Multi indent with > and <
 vnoremap < <gv
 vnoremap > >gv
+
+" Move lines up and down with <S-Up> and <S-Down>
+inoremap <S-Up> <Esc>:m -2<CR>i
+inoremap <S-Down> <Esc>:m +1<CR>i
+nnoremap <S-Up> :m -2<CR>
+nnoremap <S-Down> :m +1<CR>
+
 
 " If file is read only disallow editing
 au BufReadPost * :call CheckReadonly()
