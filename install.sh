@@ -9,7 +9,7 @@ rm -rf ~/.gnupg/gpg.conf ~/.gnupg/gpg-agent.conf
 echo "Installing new config"
 ln -s $PWD/.bashrc ~/.bashrc
 ln -s $PWD/.bash ~/.bash
-mkdir ~/.gnupg
+mkdir -p ~/.gnupg
 ln -s $PWD/.gnupg/gpg.conf ~/.gnupg/gpg.conf
 ln -s $PWD/.gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 ln -s $PWD/.gitconfig ~/.gitconfig
