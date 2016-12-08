@@ -18,6 +18,8 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
 Plug 'geoffharcourt/vim-matchit'
 
+Plug 'jamessan/vim-gnupg'
+
 " Language plugins
 
 Plug 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
@@ -189,3 +191,8 @@ function! TEXmode()
   setlocal wrap
 endfunction
 au FileType plaintex call TEXmode()
+
+" GPG settings
+let g:GPGUseAgent=0
+let g:GPGPreferArmor=1
+let g:GPGUsePipes=1
