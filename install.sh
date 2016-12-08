@@ -15,6 +15,7 @@ ln -s $PWD/.gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 ln -s $PWD/.gitconfig ~/.gitconfig
 ln -s $PWD/.gitmessage ~/.gitmessage
 ln -s $PWD/nvim ~/.config/nvim
+curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Set ownership to your own user and primary group
 chown -R "$USER:$(id -gn)" ~/.gnupg
