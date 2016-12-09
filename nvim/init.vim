@@ -20,6 +20,8 @@ Plug 'geoffharcourt/vim-matchit'
 
 Plug 'jamessan/vim-gnupg'
 
+Plug 'scrooloose/nerdtree'
+
 " Language plugins
 
 Plug 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
