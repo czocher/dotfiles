@@ -200,6 +200,7 @@ au FileType plaintex call TEXmode()
 
 " GPG settings
 let g:GPGUseAgent=1
+let g:GPGPreferSymmetric=0
 let g:GPGPreferArmor=1
 let g:GPGUsePipes=1
 let g:GPGExecutable="gpg2 --trust-model always"
