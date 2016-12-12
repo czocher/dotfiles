@@ -1,3 +1,6 @@
+" For YouCompleteMe installation
+let g:plug_timeout=120
+
 " Set plugins, :PlugInstall to install
 
 call plug#begin('~/.config/nvim/plugged')
@@ -10,8 +13,6 @@ Plug 'vim-airline/vim-airline'
 
 Plug 'townk/vim-autoclose'
 
-Plug 'vim-scripts/AutoComplPop'
-
 Plug 'tomtom/tcomment_vim'
 
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
@@ -22,23 +23,26 @@ Plug 'jamessan/vim-gnupg'
 
 Plug 'scrooloose/nerdtree'
 
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --racer-completer' }
+
 " Language plugins
 
 Plug 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
-
-Plug 'klen/python-mode'
 
 Plug 'leafgarland/typescript-vim'
 
 Plug 'rust-lang/rust.vim'
 
-Plug 'vim-scripts/pythoncomplete'
-
-Plug 'klen/python-mode'
-
 Plug 'othree/html5.vim'
 
 call plug#end()
+
+" Set the rust source directory
+let g:ycm_rust_src_path=$RUST_SRC_PATH
+
+" Disable the tab key for YouCompleteMe so Ultisnips works
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
 
 " Solarized colorscheme
 let g:solarized_termcolors=256

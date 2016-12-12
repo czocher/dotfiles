@@ -17,5 +17,3 @@
 	signingkey = 82843164B26A29FB
 [gpg]
 	program = gpg2
-[tag]
-	forceSignAnnotated = true
