@@ -7,11 +7,15 @@
 [merge]
 	tool = meld
 	ff = only
+[mergetool "meld"]
+	cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
+[mergetool]
+	keepBackup = false
 [alias]
-  cleanup = !git branch --merged master | grep -v master | xargs -n 1 git branch -d
-  ignore = !git update-index --assume-unchanged
-  deignore = !git update-index --no-assume-unchanged
-  ignored = !git ls-files -v | grep "^[[:lower:]]"
+	cleanup = !git branch --merged master | grep -v master | xargs -n 1 git branch -d
+	ignore = !git update-index --assume-unchanged
+	deignore = !git update-index --no-assume-unchanged
+	ignored = !git ls-files -v | grep "^[[:lower:]]"
 [user]
 	name = Paweł Jan Czochański
 	signingkey = 82843164B26A29FB
