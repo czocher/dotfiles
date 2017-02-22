@@ -25,6 +25,10 @@ export GPG_TTY=`tty`
 PATH=$PATH:/opt/callibre
 export PATH
 
+# https://blog.packagecloud.io/eng/2017/02/21/set-environment-variable-save-thousands-of-system-calls/
+TZ=:/etc/localtime
+export TZ
+
 alias g++='g++ -Wall -Wextra -pedantic -std=c++14'
 alias gcc='gcc -Wall -Wextra -pedantic'
 alias vim='nvim'
