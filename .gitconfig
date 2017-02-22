@@ -2,15 +2,19 @@
 	editor = nvim
 [push]
 	default = simple
+[difftool "kdiff3"]
+	trustExitCode = false
+[difftool]
+	prompt = false
 [diff]
-	tool = meld
-[merge]
-	tool = meld
-	ff = only
-[mergetool "meld"]
-	cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
+	tool = kdiff3
+[mergetool "kdiff3"]
+	trustExitCode = false
 [mergetool]
 	keepBackup = false
+[merge]
+	tool = kdiff3
+	ff = only
 [alias]
 	cleanup = !git branch --merged master | grep -v master | xargs -n 1 git branch -d
 	ignore = !git update-index --assume-unchanged
