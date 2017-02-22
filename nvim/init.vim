@@ -25,6 +25,8 @@ Plug 'scrooloose/nerdtree'
 
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --racer-completer' }
 
+Plug 'tpope/vim-fugitive'
+
 " Language plugins
 
 Plug 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
