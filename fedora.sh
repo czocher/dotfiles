@@ -12,4 +12,4 @@ run_keybase
 curl https://sh.rustup.rs -sSf | sh
 rustup component add rust-src
 
-bash -c 'su -c "curl http://folkswithhats.org/fedy-installer -o fedy-installer && chmod +x fedy-installer && ./fedy-installer"'
+curl https://www.folkswithhats.org/installer | sudo bash
