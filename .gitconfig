@@ -20,6 +20,7 @@
 	ignore = !git update-index --assume-unchanged
 	deignore = !git update-index --no-assume-unchanged
 	ignored = !git ls-files -v | grep "^[[:lower:]]"
+	wat = log --graph --decorate --oneline -15
 [user]
 	name = Paweł Jan Czochański
 	signingkey = 82843164B26A29FB
