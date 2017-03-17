@@ -32,6 +32,6 @@ git config --global commit.template ~/.gitmessage
 
 echo "Provide the user email for git: "
 read email
-git config --gloabal user.email "$email"
+git config --global user.email "$email"
 
 echo "Finished"
