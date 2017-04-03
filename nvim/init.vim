@@ -27,6 +27,8 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py --racer-completer' }
 
 Plug 'tpope/vim-fugitive'
 
+Plug 'editorconfig/editorconfig-vim'
+
 " Language plugins
 
 Plug 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
@@ -37,7 +39,12 @@ Plug 'rust-lang/rust.vim'
 
 Plug 'othree/html5.vim'
 
+Plug 'plasticboy/vim-markdown'
+
 call plug#end()
+
+" Disable global markdown folding
+let g:vim_markdown_folding_disabled = 1
 
 " Set the rust source directory
 let g:ycm_rust_src_path=$RUST_SRC_PATH
