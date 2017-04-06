@@ -29,6 +29,8 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'editorconfig/editorconfig-vim'
 
+Plug 'tweekmonster/startuptime.vim'
+
 " Language plugins
 
 Plug 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
