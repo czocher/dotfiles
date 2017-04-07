@@ -6,6 +6,8 @@
   tool = meld
 [difftool "meld"]
   cmd = meld "$LOCAL" "$REMOTE"
+[mergetool]
+	keepBackup = false
 [merge]
   conflictstyle = diff3
   tool = meld
@@ -23,6 +25,7 @@
 [user]
   name = Paweł Jan Czochański
   signingkey = 82843164B26A29FB
+	email = pawel@symmetra.pl
 [gpg]
   program = gpg2
 [color]
@@ -31,3 +34,6 @@
   fsckobjects = true
 [fetch]
   fsckobjects = true
+	ui = true
+[commit]
+	template = /home/czocher/.gitmessage
