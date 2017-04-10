@@ -9,7 +9,7 @@ Plug 'tpope/vim-sensible'
 
 Plug 'altercation/vim-colors-solarized'
 
-Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 
 Plug 'townk/vim-autoclose'
 
@@ -21,13 +21,15 @@ Plug 'geoffharcourt/vim-matchit'
 
 Plug 'jamessan/vim-gnupg'
 
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --racer-completer' }
 
 Plug 'tpope/vim-fugitive'
 
 Plug 'editorconfig/editorconfig-vim'
+
+Plug 'tweekmonster/startuptime.vim'
 
 " Language plugins
 
@@ -42,6 +44,15 @@ Plug 'othree/html5.vim'
 Plug 'plasticboy/vim-markdown'
 
 call plug#end()
+
+" Enable powerline symbols for airline, requires font setup
+let g:airline_powerline_fonts = 1
+
+" Set the airline theme
+let g:airline_theme='solarized'
+
+" Faster editorconfig loading
+let g:EditorConfig_core_mode = 'python_external'
 
 " Disable global markdown folding
 let g:vim_markdown_folding_disabled = 1

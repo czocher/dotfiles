@@ -24,6 +24,10 @@ ln -s $PWD/nvim ~/.vimrc
 ln -s $PWD/nvim/init.vim ~/.vimrc
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+git clone https://github.com/powerline/fonts.git && cd fonts && ./install.sh && cd .. && rm -rf fonts/
+
+echo "Configure the terminal to use powerline fonts"
+
 # Set ownership to your own user and primary group
 chown -R "$USER:$(id -gn)" ~/.gnupg
 # Set permissions to read, write, execute for only yourself, no others
