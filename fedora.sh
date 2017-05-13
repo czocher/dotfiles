@@ -12,6 +12,7 @@ run_keybase
 curl https://sh.rustup.rs -sSf | sh
 rustup component add rust-src
 
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 curl https://www.folkswithhats.org/installer | sudo bash
 
 chsh -s /bin/zsh

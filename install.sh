@@ -2,6 +2,7 @@
 
 echo "Removing old configs"
 rm -rf ~/.bashrc
+rm -rf ~/.zshrc
 rm -rf ~/.gitconfig
 rm -rf ~/.config/nvim
 rm -rf ~/.gnupg/gpg.conf ~/.gnupg/gpg-agent.conf
@@ -10,6 +11,7 @@ rm -rf ~/.vim
 
 echo "Installing new config"
 ln -s $PWD/.bashrc ~/.bashrc
+ln -s $PWD/.zshrc ~/.zshrc
 ln -s $PWD/.bash ~/.bash
 mkdir -p ~/.gnupg
 ln -s $PWD/.gnupg/gpg.conf ~/.gnupg/gpg.conf
