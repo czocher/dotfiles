@@ -51,15 +51,26 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git gpg-agent)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# Set SSH to use gpg-agent
+unset SSH_AGENT_PID
+if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+  export SSH_AUTH_SOCK=/run/user/$UID/gnupg/S.gpg-agent.ssh
+fi
+export GPG_TTY=`tty`
 
-start_agent_withssh
-
+# Aliases
+alias g++='g++ -Wall -Wextra -pedantic -std=c++14'
+alias gcc='gcc -Wall -Wextra -pedantic'
+alias vim='nvim'
+alias python='ipython3'
+alias python2='ipython2'
+alias gpg='gpg2'
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
