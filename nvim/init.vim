@@ -5,6 +5,8 @@ let g:plug_timeout=120
 
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'ctrlpvim/ctrlp.vim'
+
 Plug 'tpope/vim-sensible'
 
 Plug 'altercation/vim-colors-solarized'
@@ -30,6 +32,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'editorconfig/editorconfig-vim'
 
 Plug 'tweekmonster/startuptime.vim'
+
+Plug 'wincent/terminus'
 
 " Language plugins
 
