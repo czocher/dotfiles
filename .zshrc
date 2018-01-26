@@ -65,6 +65,9 @@ alias python='ipython3'
 alias python2='ipython2'
 alias gpg='gpg2'
 
+# Disable nbsp for Facebook
+setxkbmap -option "nbsp:none"
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
