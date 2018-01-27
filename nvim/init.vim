@@ -37,7 +37,7 @@ Plug 'wincent/terminus'
 
 " Language plugins
 
-Plug 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
+Plug 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX', { 'for': 'plaintex' }
 
 Plug 'leafgarland/typescript-vim'
 
