@@ -26,9 +26,20 @@ ln -s $PWD/nvim ~/.vimrc
 ln -s $PWD/nvim/init.vim ~/.vimrc
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-git clone https://github.com/powerline/fonts.git && cd fonts && ./install.sh && cd .. && rm -rf fonts/
+echo "Downloading powerline fonts"
 
+git clone https://github.com/powerline/fonts.git && cd fonts && ./install.sh && cd .. && rm -rf fonts/
 echo "Configure the terminal to use powerline fonts"
+
+echo "Downloading FiraCode"
+
+mkdir -p ~/.local/share/fonts
+for type in Bold Light Medium Regular Retina; do
+  wget -O ~/.local/share/fonts/FiraCode-${type}.ttf "https://github.com/tonsky/FiraCode/blob/master/distr/ttf/FiraCode-${type}.ttf?raw=true";
+done
+fc-cache -f
+
+echo "Configure the terminal to use FiraCode"
 
 # Set ownership to your own user and primary group
 chown -R "$USER:$(id -gn)" ~/.gnupg
