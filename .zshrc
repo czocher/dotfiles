@@ -9,6 +9,9 @@ export ZSH=/home/czocher/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="agnoster"
 
+# Hide the PS1 user information when unnecessary
+DEFAULT_USER="czocher"
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
