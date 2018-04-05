@@ -93,7 +93,7 @@ set undoreload=10000            " Number of lines to save for undo
 " Highlight the 80th column
 set colorcolumn=80
 
-# Highlight the cursor column
+" Highlight the cursor column
 set cursorcolumn
 
 " Change tabs to spaces, set tab to two spaces
