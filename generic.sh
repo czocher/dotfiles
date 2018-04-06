@@ -7,7 +7,6 @@ trap "exit" INT
 
 echo "Removing old configs"
 rm -rf ~/.bashrc
-rm -rf ~/.zshrc
 rm -rf ~/.gitconfig
 rm -rf ~/.config/nvim
 rm -rf ~/.gnupg/gpg.conf ~/.gnupg/gpg-agent.conf
@@ -20,7 +19,6 @@ rm -rf ~/.local/share/konsole/czocher.profile
 
 echo "Installing new config"
 ln -s $PWD/.bashrc ~/.bashrc
-ln -s $PWD/.zshrc ~/.zshrc
 mkdir -p ~/.gnupg
 ln -s $PWD/.gnupg/gpg.conf ~/.gnupg/gpg.conf
 ln -s $PWD/.gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
@@ -70,5 +68,7 @@ git config --global user.email "$email"
 
 echo "Downloading oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+rm -rf ~/.zshrc
+ln -s $PWD/.zshrc ~/.zshrc
 
 echo "Finished"
