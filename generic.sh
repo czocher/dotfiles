@@ -68,4 +68,8 @@ echo "Provide the user email for git: "
 read email
 git config --global user.email "$email"
 
+
+echo "Downloading oh-my-zsh"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 echo "Finished"
