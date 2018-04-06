@@ -32,7 +32,6 @@
 [transfer]
 	fsckobjects = true
 [fetch]
-	fsckobjects = true
 	ui = true
 [commit]
 	template = /home/czocher/.gitmessage
