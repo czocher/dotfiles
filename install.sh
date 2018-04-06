@@ -16,7 +16,6 @@ rm -rf ~/.config/konsolerc
 echo "Installing new config"
 ln -s $PWD/.bashrc ~/.bashrc
 ln -s $PWD/.zshrc ~/.zshrc
-ln -s $PWD/.bash ~/.bash
 mkdir -p ~/.gnupg
 ln -s $PWD/.gnupg/gpg.conf ~/.gnupg/gpg.conf
 ln -s $PWD/.gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
@@ -45,7 +44,7 @@ fc-cache -f
 
 echo "Downloading git-aware-prompt"
 git clone git://github.com/jimeh/git-aware-prompt.git .bash
-ln -s $PWD/.bash ~/
+ln -s $PWD/.bash ~/.bash
 
 echo "Downlading rust"
 curl https://sh.rustup.rs -sSf | bash -s -- -y
