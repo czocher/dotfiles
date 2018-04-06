@@ -2,6 +2,7 @@
 
 if [[ $(id -u) -eq 0 ]] ; then echo "Please run as non-root" ; exit 1 ; fi
 
+# Kill the whole script on CTRL+C
 trap "exit" INT
 
 sudo dnf install yubikey-personalization-gui gimp libreoffice git yakuake vim vim-X11 meld xclip python3-ipython python-ipython python-devel python3-devel cmake gcc gcc-c++ python-trollius python3-trollius kdiff3 zsh util-linux-user pinentry-qt
