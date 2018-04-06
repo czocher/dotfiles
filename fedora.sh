@@ -18,7 +18,7 @@ sudo dnf -y install neovim *-neovim
 sudo dnf -y install https://prerelease.keybase.io/keybase_amd64.rpm
 run_keybase
 
-curl https://sh.rustup.rs -sSf | sh
+curl https://sh.rustup.rs -sSf | bash -s -- -y
 rustup component add rust-src
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
