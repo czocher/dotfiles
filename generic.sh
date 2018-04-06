@@ -15,6 +15,8 @@ rm -rf ~/.vimrc
 rm -rf ~/.vim
 rm -rf ~/.config/yakuakerc
 rm -rf ~/.config/konsolerc
+rm -rf ~/.gitmessage
+rm -rf ~/.local/share/konsole/czocher.profile
 
 echo "Installing new config"
 ln -s $PWD/.bashrc ~/.bashrc
@@ -27,7 +29,7 @@ curl https://keybase.io/czocher/pgp_keys.asc | gpg --import
 ln -s $PWD/.gitconfig ~/.gitconfig
 ln -s $PWD/.gitmessage ~/.gitmessage
 ln -s $PWD/nvim ~/.config/nvim
-ln -s $PWD/nvim ~/.vimrc
+ln -s $PWD/nvim ~/.vim
 ln -s $PWD/nvim/init.vim ~/.vimrc
 ln -s $PWD/other/yakuakerc ~/.config/yakuakerc
 ln -s $PWD/other/konsolerc ~/.config/konsolerc
