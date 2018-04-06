@@ -30,8 +30,11 @@
 [color]
 	ui = true
 [transfer]
-	fsckobjects = true
+	fsckObjects = true
+[receive]
+	fsckObjects = false
 [fetch]
+	fsckObjects = false
 	ui = true
 [commit]
 	template = /home/czocher/.gitmessage
