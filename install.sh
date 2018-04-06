@@ -51,7 +51,7 @@ echo "Downlading rust"
 curl https://sh.rustup.rs -sSf | bash -s -- -y
 rustup component add rust-src
 
-echo "Configure gpg"
+echo "Configuring gpg"
 # Set ownership to your own user and primary group
 chown -R "$USER:$(id -gn)" ~/.gnupg
 # Set permissions to read, write, execute for only yourself, no others
