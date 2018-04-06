@@ -1,5 +1,7 @@
 #!/bin/bash
 
+if [[ $(id -u) -eq 0 ]] ; then echo "Please run as non-root" ; exit 1 ; fi
+
 echo "Removing old configs"
 rm -rf ~/.bashrc
 rm -rf ~/.zshrc
