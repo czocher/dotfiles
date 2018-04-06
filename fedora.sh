@@ -1,20 +1,22 @@
 #!/bin/bash
 
-dnf install yubikey-personalization-gui gimp libreoffice git yakuake vim vim-X11 meld xclip python3-ipython python-ipython python-devel python3-devel cmake gcc gcc-c++ python-trollius python3-trollius kdiff3 zsh util-linux-user pinentry-qt
+if [[ $(id -u) -eq 0 ]] ; then echo "Please run as non-root" ; exit 1 ; fi
+
+sudo dnf install yubikey-personalization-gui gimp libreoffice git yakuake vim vim-X11 meld xclip python3-ipython python-ipython python-devel python3-devel cmake gcc gcc-c++ python-trollius python3-trollius kdiff3 zsh util-linux-user pinentry-qt
 
 echo "Installing pass"
-dnf -y install pass oathtool
-git clone https://github.com/tadfisher/pass-otp
+sudo dnf -y install pass oathtool
+sudo git clone https://github.com/tadfisher/pass-otp
 cd pass-otp
 sudo make install
 cd ..
 rm -rf pass-otp
 
-dnf -y install dnf-plugins-core
-dnf -y copr enable dperson/neovim
-dnf -y install neovim
-dnf -y install python3-neovim python3-neovim-gui python-neovim python-neovim-gui
-dnf -y install https://prerelease.keybase.io/keybase_amd64.rpm
+sudo dnf -y install dnf-plugins-core
+sudo dnf -y copr enable dperson/neovim
+sudo dnf -y install neovim
+sudo dnf -y install python3-neovim python3-neovim-gui python-neovim python-neovim-gui
+sudo dnf -y install https://prerelease.keybase.io/keybase_amd64.rpm
 run_keybase
 
 curl https://sh.rustup.rs -sSf | sh
