@@ -46,9 +46,15 @@ for type in Bold Light Medium Regular Retina; do
 done
 fc-cache -f
 
-echo "Download git-aware-prompt"
+echo "Downloading git-aware-prompt"
+
 git clone git://github.com/jimeh/git-aware-prompt.git .bash
 ln -s $PWD/.bash ~/.bash
+
+echo "Downlading rust"
+
+curl https://sh.rustup.rs -sSf | bash -s -- -y
+rustup component add rust-src
 
 echo "Configure the terminal to use FiraCode"
 
