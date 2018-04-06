@@ -8,6 +8,8 @@ rm -rf ~/.config/nvim
 rm -rf ~/.gnupg/gpg.conf ~/.gnupg/gpg-agent.conf
 rm -rf ~/.vimrc
 rm -rf ~/.vim
+rm -rf ~/.config/yakuakerc
+rm -rf ~/.config/konsolerc
 
 echo "Installing new config"
 ln -s $PWD/.bashrc ~/.bashrc
@@ -24,6 +26,9 @@ ln -s $PWD/.gitmessage ~/.gitmessage
 ln -s $PWD/nvim ~/.config/nvim
 ln -s $PWD/nvim ~/.vimrc
 ln -s $PWD/nvim/init.vim ~/.vimrc
+ln -s $PWD/other/yakuakerc ~/.config/yakuakerc
+ln -s $PWD/other/konsolerc ~/.config/konsolerc
+ln -s $PWD/other/czocher.profile ~/.local/share/konsole/czocher.profile
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo "Downloading powerline fonts"
