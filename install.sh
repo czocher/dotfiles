@@ -43,7 +43,7 @@ done
 fc-cache -f
 
 echo "Downloading git-aware-prompt"
-git clone git://github.com/jimeh/git-aware-prompt.git .bash
+git clone git://github.com/jimeh/git-aware-prompt.git .bash/git-aware-prompt
 ln -s $PWD/.bash ~/.bash
 
 echo "Downlading rust"
