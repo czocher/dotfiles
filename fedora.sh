@@ -6,7 +6,7 @@ sudo dnf install yubikey-personalization-gui gimp libreoffice git yakuake vim vi
 
 echo "Installing pass"
 sudo dnf -y install pass oathtool
-sudo git clone https://github.com/tadfisher/pass-otp
+git clone https://github.com/tadfisher/pass-otp
 cd pass-otp
 sudo make install
 cd ..
