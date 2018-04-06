@@ -45,7 +45,7 @@ fc-cache -f
 
 echo "Downloading git-aware-prompt"
 git clone git://github.com/jimeh/git-aware-prompt.git .bash
-ln -s $PWD/.bash ~/.bash
+ln -s $PWD/.bash ~/
 
 echo "Downlading rust"
 curl https://sh.rustup.rs -sSf | bash -s -- -y
