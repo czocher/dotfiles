@@ -20,7 +20,6 @@ ln -s $PWD/.bash ~/.bash
 mkdir -p ~/.gnupg
 ln -s $PWD/.gnupg/gpg.conf ~/.gnupg/gpg.conf
 ln -s $PWD/.gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
-
 curl https://keybase.io/czocher/pgp_keys.asc | gpg --import
 
 ln -s $PWD/.gitconfig ~/.gitconfig
@@ -34,12 +33,10 @@ ln -s $PWD/other/czocher.profile ~/.local/share/konsole/czocher.profile
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo "Downloading powerline fonts"
-
 git clone https://github.com/powerline/fonts.git && cd fonts && ./install.sh && cd .. && rm -rf fonts/
 echo "Configure the terminal to use powerline fonts"
 
 echo "Downloading FiraCode"
-
 mkdir -p ~/.local/share/fonts
 for type in Bold Light Medium Regular Retina; do
   wget -O ~/.local/share/fonts/FiraCode-${type}.ttf "https://github.com/tonsky/FiraCode/blob/master/distr/ttf/FiraCode-${type}.ttf?raw=true";
@@ -47,17 +44,14 @@ done
 fc-cache -f
 
 echo "Downloading git-aware-prompt"
-
 git clone git://github.com/jimeh/git-aware-prompt.git .bash
 ln -s $PWD/.bash ~/.bash
 
 echo "Downlading rust"
-
 curl https://sh.rustup.rs -sSf | bash -s -- -y
 rustup component add rust-src
 
-echo "Configure the terminal to use FiraCode"
-
+echo "Configure gpg"
 # Set ownership to your own user and primary group
 chown -R "$USER:$(id -gn)" ~/.gnupg
 # Set permissions to read, write, execute for only yourself, no others
@@ -65,6 +59,7 @@ chmod 700 ~/.gnupg
 # Set permissions to read, write for only yourself, no others
 chmod 600 ~/.gnupg/*
 
+echo "Configuring git"
 git config --global commit.template ~/.gitmessage
 
 echo "Provide the user email for git: "
