@@ -64,8 +64,6 @@ chmod 700 ~/.gnupg
 chmod 600 ~/.gnupg/*
 
 echo "Configuring git"
-git config --global commit.template ~/.gitmessage
-
 echo "Provide the user email for git: "
 read email
 git config --global user.email "$email"
