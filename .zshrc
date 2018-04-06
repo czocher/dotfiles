@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$PATH:~/cargo/bin/rustup
+export PATH=$PATH:~/cargo/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/czocher/.oh-my-zsh
