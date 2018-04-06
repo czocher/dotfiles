@@ -46,6 +46,10 @@ for type in Bold Light Medium Regular Retina; do
 done
 fc-cache -f
 
+echo "Download git-aware-prompt"
+git clone git://github.com/jimeh/git-aware-prompt.git .bash
+ln -s $PWD/.bash ~/.bash
+
 echo "Configure the terminal to use FiraCode"
 
 # Set ownership to your own user and primary group
