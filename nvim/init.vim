@@ -37,6 +37,8 @@ Plug 'wincent/terminus'
 
 " Language plugins
 
+Plug 'python-mode/python-mode', { 'branch': 'develop' }
+
 Plug 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX', { 'for': 'plaintex' }
 
 Plug 'leafgarland/typescript-vim'
@@ -116,6 +118,9 @@ set incsearch
 
 " When pattern ccontains only a-z; case does not matter
 set ignorecase
+
+" Disable folding
+set nofoldenable
 
 " When pattern constains any of A-Z; case matters
 set smartcase
