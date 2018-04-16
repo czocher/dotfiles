@@ -37,6 +37,8 @@ Plug 'wincent/terminus'
 
 " Language plugins
 
+Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh', }
+
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
 
 Plug 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX', { 'for': 'plaintex' }
@@ -52,6 +54,21 @@ Plug 'othree/html5.vim'
 Plug 'plasticboy/vim-markdown'
 
 call plug#end()
+
+" Language Server Client options
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ }
+
+" Automatically start language servers.
+let g:LanguageClient_autoStart = 1
+
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+
+" Required for operations modifying multiple buffers like rename.
+set hidden
 
 " Enable powerline symbols for airline, requires font setup
 let g:airline_powerline_fonts = 1
