@@ -51,7 +51,11 @@ ln -s $PWD/.bash ~/.bash
 
 echo "Downlading rust"
 curl https://sh.rustup.rs -sSf | bash -s -- -y
-rustup component add rust-src
+rustup self update
+rustup install nightly
+rustup component add rls-preview --toolchain nightly
+rustup component add rust-analysis --toolchain nightly
+rustup component add rust-src --toolchain nightly
 
 echo "Configuring gpg"
 # Set ownership to your own user and primary group
