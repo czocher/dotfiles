@@ -71,4 +71,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 rm -rf ~/.zshrc
 ln -s $PWD/.zshrc ~/.zshrc
 
+echo "Update nvim plugins"
+nvim +PlugInstall +UpdateRemotePlugins +qa
+
 echo "Finished"
