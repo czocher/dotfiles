@@ -41,6 +41,8 @@ Plug 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX', { 'for': 'plaintex' }
 
 Plug 'leafgarland/typescript-vim'
 
+Plug 'posva/vim-vue'
+
 Plug 'fatih/vim-go'
 
 Plug 'rust-lang/rust.vim'
