@@ -22,7 +22,7 @@ if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
 fi
 export GPG_TTY=`tty`
 
-PATH=$PATH:/opt/callibre
+PATH=$PATH:/opt/callibre:~/cargo/bin
 export PATH
 
 # https://blog.packagecloud.io/eng/2017/02/21/set-environment-variable-save-thousands-of-system-calls/

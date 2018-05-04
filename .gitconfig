@@ -1,38 +1,40 @@
 [core]
-  editor = nvim
+	editor = nvim
 [push]
-  default = simple
+	default = simple
 [diff]
-  tool = meld
+	tool = meld
 [difftool "meld"]
-  cmd = meld "$LOCAL" "$REMOTE"
+	cmd = meld "$LOCAL" "$REMOTE"
 [mergetool]
-  keepBackup = false
+	keepBackup = false
 [merge]
-  conflictstyle = diff3
-  tool = meld
-  ff = only
+	conflictstyle = diff3
+	tool = meld
+	ff = only
 [mergetool]
-  keepBackup = false
+	keepBackup = false
 [mergetool "meld"]
-  cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
+	cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
 [alias]
-  cleanup = !git branch --merged master | grep -v master | xargs -n 1 git branch -d
-  ignore = !git update-index --assume-unchanged
-  deignore = !git update-index --no-assume-unchanged
-  ignored = !git ls-files -v | grep "^[[:lower:]]"
-  wat = log --graph --decorate --oneline -15
+	cleanup = !git branch --merged master | grep -v master | xargs -n 1 git branch -d
+	ignore = !git update-index --assume-unchanged
+	deignore = !git update-index --no-assume-unchanged
+	ignored = !git ls-files -v | grep "^[[:lower:]]"
+	wat = log --graph --decorate --oneline -15
 [user]
-  name = Paweł Jan Czochański
-  signingkey = 82843164B26A29FB
+	name = Paweł Jan Czochański
+	signingkey = 82843164B26A29FB
 [gpg]
-  program = gpg2
+	program = gpg2
 [color]
-  ui = true
+	ui = true
 [transfer]
-  fsckobjects = true
+	fsckObjects = true
+[receive]
+	fsckObjects = false
 [fetch]
-  fsckobjects = true
-  ui = true
+	fsckObjects = false
+	ui = true
 [commit]
-  template = /home/czocher/.gitmessage
+	template = /home/czocher/.gitmessage

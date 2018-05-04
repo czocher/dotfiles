@@ -1,57 +1,12 @@
 #!/bin/bash
 
-echo "Removing old configs"
-rm -rf ~/.bashrc
-rm -rf ~/.zshrc
-rm -rf ~/.gitconfig
-rm -rf ~/.config/nvim
-rm -rf ~/.gnupg/gpg.conf ~/.gnupg/gpg-agent.conf
-rm -rf ~/.vimrc
-rm -rf ~/.vim
+if [[ $(id -u) -eq 0 ]] ; then echo "Please run as non-root" ; exit 1 ; fi
 
-echo "Installing new config"
-ln -s $PWD/.bashrc ~/.bashrc
-ln -s $PWD/.zshrc ~/.zshrc
-ln -s $PWD/.bash ~/.bash
-mkdir -p ~/.gnupg
-ln -s $PWD/.gnupg/gpg.conf ~/.gnupg/gpg.conf
-ln -s $PWD/.gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
+# Kill the whole script on CTRL+C
+trap "exit" INT
 
-curl https://keybase.io/czocher/pgp_keys.asc | gpg --import
+if [[ -f /etc/fedora-release ]]; then
+  bash fedora.sh
+fi
 
-ln -s $PWD/.gitconfig ~/.gitconfig
-ln -s $PWD/.gitmessage ~/.gitmessage
-ln -s $PWD/nvim ~/.config/nvim
-ln -s $PWD/nvim ~/.vimrc
-ln -s $PWD/nvim/init.vim ~/.vimrc
-curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-echo "Downloading powerline fonts"
-
-git clone https://github.com/powerline/fonts.git && cd fonts && ./install.sh && cd .. && rm -rf fonts/
-echo "Configure the terminal to use powerline fonts"
-
-echo "Downloading FiraCode"
-
-mkdir -p ~/.local/share/fonts
-for type in Bold Light Medium Regular Retina; do
-  wget -O ~/.local/share/fonts/FiraCode-${type}.ttf "https://github.com/tonsky/FiraCode/blob/master/distr/ttf/FiraCode-${type}.ttf?raw=true";
-done
-fc-cache -f
-
-echo "Configure the terminal to use FiraCode"
-
-# Set ownership to your own user and primary group
-chown -R "$USER:$(id -gn)" ~/.gnupg
-# Set permissions to read, write, execute for only yourself, no others
-chmod 700 ~/.gnupg
-# Set permissions to read, write for only yourself, no others
-chmod 600 ~/.gnupg/*
-
-git config --global commit.template ~/.gitmessage
-
-echo "Provide the user email for git: "
-read email
-git config --global user.email "$email"
-
-echo "Finished"
+bash generic.sh
