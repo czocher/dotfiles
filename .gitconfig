@@ -4,7 +4,7 @@
 	default = simple
 [diff]
 	tool = meld
-	diff.algorithm patience
+	algorithm = patience
 [difftool "meld"]
 	cmd = meld "$LOCAL" "$REMOTE"
 [mergetool]
