@@ -155,7 +155,6 @@ set matchtime=4
 
 " Omnicomplete keybinding change from Ctrl+x Ctrl+o to Ctrl+space
 inoremap <Nul> <C-x><C-o>
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
   \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
