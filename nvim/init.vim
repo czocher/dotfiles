@@ -226,6 +226,9 @@ autocmd FileType html set et ts=2 sw=2 softtabstop=2 nocindent
 " Python configs
 autocmd FileType python set et ts=4 sw=4 softtabstop=4
 
+" Markdown configs
+autocmd FileType markdown set textwidth=80
+
 " Highlight everything above the 80th column
 autocmd FileType python match ErrorMsg '\%>80v.\+'
 
