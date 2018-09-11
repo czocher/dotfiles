@@ -25,7 +25,7 @@ Plug 'jamessan/vim-gnupg'
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --racer-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --go-completer --rust-completer --clang-tidy' }
 
 Plug 'tpope/vim-fugitive'
 
