@@ -16,6 +16,8 @@ cd ..
 rm -rf pass-otp
 
 sudo dnf -y install dnf-plugins-core
+sudo dnf -y copr enable carlwgeorge/ripgrep
+sudo dnf -y install ripgrep
 sudo dnf -y copr enable dperson/neovim
 sudo dnf -y install neovim *-neovim
 sudo dnf -y install https://prerelease.keybase.io/keybase_amd64.rpm
