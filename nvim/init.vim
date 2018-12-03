@@ -13,7 +13,7 @@ Plug 'altercation/vim-colors-solarized'
 
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 
-Plug 'townk/vim-autoclose'
+Plug 'Raimondi/delimitMate'
 
 Plug 'tomtom/tcomment_vim'
 
