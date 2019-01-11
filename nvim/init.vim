@@ -58,7 +58,7 @@ Plug 'plasticboy/vim-markdown'
 call plug#end()
 
 " Set shell to zsh
-set shell = /bin/zsh
+set shell=/bin/zsh
 
 " Language Server Client options
 let g:LanguageClient_serverCommands = {
