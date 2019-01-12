@@ -39,3 +39,4 @@
 	ui = true
 [commit]
 	template = /home/czocher/.gitmessage
+	gpgsign = true

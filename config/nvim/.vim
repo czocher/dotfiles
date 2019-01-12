@@ -1,0 +1,1 @@
+/home/czocher/.dotfiles/config/nvim
