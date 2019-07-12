@@ -1,5 +1,7 @@
 [core]
 	editor = nvim
+	autocrlf = true
+	safecrlf = true
 [push]
 	default = simple
 [diff]
