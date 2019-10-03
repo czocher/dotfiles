@@ -1,6 +1,6 @@
 [core]
 	editor = nvim
-	autocrlf = true
+	autocrlf = input
 	safecrlf = true
 [push]
 	default = simple

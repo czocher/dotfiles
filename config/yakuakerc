@@ -1,11 +1,18 @@
+[Appearance]
+Skin=breeze_v2
+
 [Desktop Entry]
 DefaultProfile=Czocher.profile
 
 [Dialogs]
 FirstRun=false
 
+[DownloadDialog Settings]
+Height 1080=477
+Width 1920=700
+
 [Favorite Profiles]
-Favorites=
+Favorites=Czocher.profile
 
 [Open-with settings]
 CompletionMode=5
