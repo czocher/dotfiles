@@ -97,3 +97,10 @@ setxkbmap -option "nbsp:none"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Gopass completion if installed
+if type "gopass" > /dev/null; then
+  source <(gopass completion zsh | head -n -1 | tail -n +2)
+  compdef _gopass gopass
+fi
+
