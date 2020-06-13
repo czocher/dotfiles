@@ -4,6 +4,10 @@ export PATH=$PATH:~/cargo/bin
 # Path to your oh-my-zsh installation.
 export ZSH=/home/czocher/.oh-my-zsh
 
+# Configure restic
+export RESTIC_PASSWORD_COMMAND="gopass show backup/stoat"
+export RESTIC_REPOSITORY=sftp:czocher@10.0.1.10:/home/restic
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -98,9 +102,4 @@ setxkbmap -option "nbsp:none"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Gopass completion if installed
-if type "gopass" > /dev/null; then
-  source <(gopass completion zsh | head -n -1 | tail -n +2)
-  compdef _gopass gopass
-fi
-
+alias pass=gopass
