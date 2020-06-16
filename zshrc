@@ -5,7 +5,7 @@ export PATH=$PATH:$HOME/.cargo/bin
 export ZSH=/home/czocher/.oh-my-zsh
 
 # Configure restic
-export RESTIC_PASSWORD_COMMAND="gopass show backup/stoat"
+export RESTIC_PASSWORD_COMMAND="gopass show backup"
 export RESTIC_REPOSITORY=sftp:czocher@10.0.1.10:/home/restic
 
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -110,12 +110,17 @@ setxkbmap -option "nbsp:none"
 # Set XDG to defaults if not set
 if [ -z "$XDG_DATA_HOME" ]
 then
-  export XDG_DATA_HOME="$HOME"/.cache
+  export XDG_DATA_HOME="$HOME"/.local/share
+fi
+
+if [ -z "$XDG_CONFIG_HOME" ]
+then
+  export XDG_CONFIG_HOME="$HOME"/.config
 fi
 
 if [ -z "$XDG_CACHE_HOME" ]
 then
-  export XDG_CACHE_HOME="$HOME"/.local/share
+  export XDG_CACHE_HOME="$HOME"/.cache
 fi
 
 
