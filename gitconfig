@@ -28,7 +28,7 @@
 	wat = log --graph --decorate --oneline -15
 [user]
 	name = Paweł Jan Czochański
-	signingkey = 82843164B26A29FB
+	signingkey = 20810F57B5910162
 [gpg]
 	program = gpg2
 [color]
