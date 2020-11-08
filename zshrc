@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$PATH:$HOME/.cargo/bin
+export PATH=$PATH:$HOME/.cargo/bin:$HOME/.poetry/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/czocher/.oh-my-zsh
@@ -129,3 +129,16 @@ fi
 mkdir -p "$XDG_CACHE_HOME"/zsh
 mkdir -p "$XDG_DATA_HOME"/zsh
 export HISTFILE="$XDG_DATA_HOME"/zsh/history
+
+## Xauthority
+export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
+export ERRFILE="$XDG_RUNTIME_DIR"/xsession-errors
+
+# Rust
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+
+# Less
+mkdir -p "$XDG_CACHE_HOME"/less
+export LESSKEY="$XDG_CONFIG_HOME"/less/lesskey
+export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
