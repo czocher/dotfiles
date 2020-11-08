@@ -4,6 +4,7 @@
 	safecrlf = true
 [push]
 	default = simple
+	gpgSign = if-asked
 [diff]
 	tool = meld
 	algorithm = patience
