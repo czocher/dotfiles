@@ -6,7 +6,7 @@ export ZSH=/home/czocher/.oh-my-zsh
 
 # Configure restic
 export RESTIC_PASSWORD_COMMAND="gopass show backup"
-export RESTIC_REPOSITORY=sftp:czocher@10.0.1.10:/home/restic
+export RESTIC_REPOSITORY=sftp:czocher@10.0.0.10:/home/restic
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -142,3 +142,5 @@ export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 mkdir -p "$XDG_CACHE_HOME"/less
 export LESSKEY="$XDG_CONFIG_HOME"/less/lesskey
 export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
+
+source /home/czocher/.local/share/cargo/env
