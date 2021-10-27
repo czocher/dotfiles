@@ -7,7 +7,7 @@
 	gpgSign = if-asked
 [diff]
 	tool = meld
-	algorithm = patience
+	algorithm = histogram
 [difftool "meld"]
 	cmd = meld "$LOCAL" "$REMOTE"
 [mergetool]
