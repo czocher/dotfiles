@@ -40,6 +40,9 @@
 [fetch]
 	fsckObjects = false
 	ui = true
+	parallel = 0
 [commit]
 	template = /home/czocher/.gitmessage
+	gpgsign = true
+[tag]
 	gpgsign = true
