@@ -72,6 +72,7 @@ alias python='ipython3'
 alias python2='ipython2'
 alias gpg='gpg2'
 alias pass='gopass'
+alias restart_pcscd='sudo systemctl restart pcscd'
 
 # Disable nbsp for Facebook
 setxkbmap -option "nbsp:none"
