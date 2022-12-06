@@ -1,5 +1,6 @@
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+# Add all bin paths from ~/Programy to $PATH
+BINARIES=( ~/Programy/*/bin ) 2> /dev/null
+[ ${#BINARIES[@]} -ne 0 ] && path+=( $BINARIES )
 
 # Configure restic
 export RESTIC_PASSWORD_COMMAND='gopass show backup'

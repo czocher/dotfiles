@@ -7,6 +7,9 @@ DEFAULT_USER="czocher"
 # Plugin configuration for oh-my-zsh
 plugins=(git gpg-agent pass web-search kate colored-man-pages virtualenvwrapper virtualenv)
 
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
 # Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
