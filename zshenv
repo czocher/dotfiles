@@ -1,5 +1,5 @@
 # Add all bin paths from ~/Programy to $PATH
-BINARIES=( ~/Programy/*/bin ) 2> /dev/null
+BINARIES=( ~/Programy/*/bin ~/Programy/* ) 2> /dev/null
 [ ${#BINARIES[@]} -ne 0 ] && path+=( $BINARIES )
 
 # Configure restic
