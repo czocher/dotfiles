@@ -46,3 +46,5 @@
 	gpgsign = true
 [tag]
 	gpgsign = true
+[pull]
+	ff = only

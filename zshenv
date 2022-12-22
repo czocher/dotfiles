@@ -3,8 +3,8 @@ BINARIES=( ~/Programy/*/bin ~/Programy/* ) 2> /dev/null
 [ ${#BINARIES[@]} -ne 0 ] && path+=( $BINARIES )
 
 # Configure restic
-export RESTIC_PASSWORD_COMMAND='gopass show backup'
-export RESTIC_REPOSITORY='sftp:czocher@10.0.0.10:/home/restic'
+export RESTIC_REPOSITORY='sftp:czocher@badger.internal:/home/restic'
+export RESTIC_PASSWORD_COMMAND='kdialog --password "Provide the backup password"'
 
 # Set XDG to defaults if not set
 [ -z "$XDG_DATA_HOME" ] && export XDG_DATA_HOME="$HOME/.local/share"
