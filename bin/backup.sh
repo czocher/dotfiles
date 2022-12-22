@@ -7,3 +7,5 @@ if [ "$RESULT" == "CANCEL" ]; then
 fi
 
 restic backup --files-from ~/.backup_list
+
+notify-send --icon=backup --urgency=low 'Backup complete'
