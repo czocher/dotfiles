@@ -6,6 +6,6 @@ if [ "$RESULT" == "CANCEL" ]; then
   exit 0
 fi
 
-restic backup --files-from ~/.backup_list
+RESULT=$(restic backup --files-from ~/.backup_list)
 
-notify-send --icon=backup --urgency=low 'Backup complete'
+notify-send --icon=backup --urgency=low 'Backup complete' "$RESULT"
