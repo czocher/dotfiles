@@ -4,7 +4,7 @@ BINARIES=( ~/.bin/ ~/Programy/*/bin ~/Programy/* ) 2> /dev/null
 
 # Configure restic
 export RESTIC_REPOSITORY='sftp:czocher@badger.internal:/home/restic'
-export RESTIC_PASSWORD_COMMAND='kdialog --password "Provide the backup password"'
+export RESTIC_PASSWORD_COMMAND='gpg --decrypt ~/.backup_password.asc'
 
 # Set XDG to defaults if not set
 [ -z "$XDG_DATA_HOME" ] && export XDG_DATA_HOME="$HOME/.local/share"
