@@ -2,7 +2,7 @@
 
 RESULT=$(notify-send --icon=backup --urgency=critical --action=BACKUP=Backup --action=CANCEL=Cancel 'Perform backup' 'Do you wish to perform a backup?')
 
-if [ "$RESULT" == "CANCEL" ]; then
+if [ "$RESULT" == "CANCEL" ] || [ -z $RESULT ]; then
   exit 0
 fi
 
