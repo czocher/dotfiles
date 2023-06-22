@@ -21,7 +21,7 @@ export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
 export TESTCONTAINERS_RYUK_DISABLED='true'
 
 # Configure CDPATH
-export CDPATH='~/Projekty'
+export CDPATH=~/Projekty
 
 # Show emoji box when in toolbox context
 prompt_context() {

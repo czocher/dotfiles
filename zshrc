@@ -21,9 +21,6 @@ alias python='ipython3'
 alias gpg='gpg2'
 alias restart_pcscd='sudo systemctl restart pcscd'
 
-# Disable nbsp for Facebook
-setxkbmap -option "nbsp:none"
-
 # Configure command line tools to use English (has to be in zshrc)
 export LC_MESSAGES='en_GB'
 
