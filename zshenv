@@ -19,3 +19,6 @@ export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
 
 # Disable Ryuk in testcontainers
 export TESTCONTAINERS_RYUK_DISABLED='true'
+
+# Configure CDPATH
+export CDPATH='~/Projekty'
