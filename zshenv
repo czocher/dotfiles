@@ -1,5 +1,5 @@
 # Add all bin paths from ~/Programy to $PATH
-BINARIES=( ~/.bin/ ~/Programy/*/bin ~/Programy/* ) 2> /dev/null
+BINARIES=( ~/.local/bin ~/.bin/ ~/Programy/*/bin ~/Programy/* ) 2> /dev/null
 [ ${#BINARIES[@]} -ne 0 ] && path+=( $BINARIES )
 
 # Set XDG to defaults if not set
