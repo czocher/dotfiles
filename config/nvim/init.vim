@@ -1,263 +1,260 @@
-" For YouCompleteMe installation
-let g:plug_timeout=120
+" ~/.config/nvim/init.vim
 
-" Set plugins, :PlugInstall to install
+scriptencoding utf-8
+
+" -----------------------------------------------------------------------------
+" General
+" -----------------------------------------------------------------------------
+
+let mapleader = ' '
+let maplocalleader = ','
+
+set shell=/bin/zsh
+set hidden
+set confirm
+set clipboard=unnamedplus
+
+filetype plugin indent on
+syntax enable
+
+" -----------------------------------------------------------------------------
+" Plugins
+" -----------------------------------------------------------------------------
+
+let g:plug_timeout = 120
 
 call plug#begin('~/.config/nvim/plugged')
 
+" Navigation
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'preservim/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 
-Plug 'tpope/vim-sensible'
+" Editing
+Plug 'tpope/vim-commentary'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
-Plug 'altercation/vim-colors-solarized'
-
-Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
-
-Plug 'Raimondi/delimitMate'
-
-Plug 'tomtom/tcomment_vim'
-
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-
-Plug 'geoffharcourt/vim-matchit'
-
+" Git and encrypted files
+Plug 'tpope/vim-fugitive'
 Plug 'jamessan/vim-gnupg'
 
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+" Language support
+Plug 'lervag/vimtex'
+Plug 'neovim/nvim-lspconfig'
 
-Plug 'tpope/vim-fugitive'
+" Appearance
+Plug 'altercation/vim-colors-solarized'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
-Plug 'editorconfig/editorconfig-vim'
-
-Plug 'tweekmonster/startuptime.vim'
-
-Plug 'wincent/terminus'
-
-" Language plugins
-
-Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh', }
-
-Plug 'python-mode/python-mode', { 'branch': 'develop' }
-
-Plug 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX', { 'for': 'plaintex' }
-
-Plug 'leafgarland/typescript-vim'
-
-Plug 'posva/vim-vue'
-
-Plug 'fatih/vim-go'
-
-Plug 'rust-lang/rust.vim'
-
-Plug 'othree/html5.vim'
-
+" Markdown
 Plug 'plasticboy/vim-markdown'
 
 call plug#end()
 
-" Set shell to zsh
-set shell=/bin/zsh
+" -----------------------------------------------------------------------------
+" Appearance
+" -----------------------------------------------------------------------------
 
-" Language Server Client options
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-    \ }
-
-" Automatically start language servers.
-let g:LanguageClient_autoStart = 1
-
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-
-" Required for operations modifying multiple buffers like rename.
-set hidden
-
-" Enable powerline symbols for airline, requires font setup
-let g:airline_powerline_fonts = 1
-
-" Set the airline theme
-let g:airline_theme='solarized'
-
-" Faster editorconfig loading
-let g:EditorConfig_core_mode = 'python_external'
-
-" Disable global markdown folding
-let g:vim_markdown_folding_disabled = 1
-
-" Set the rust source directory
-let g:ycm_rust_src_path=$RUST_SRC_PATH
-
-" Disable the tab key for YouCompleteMe so Ultisnips works
-let g:ycm_key_list_select_completion=[]
-let g:ycm_key_list_previous_completion=[]
-
-" Solarized colorscheme
-let g:solarized_termcolors=256
-colorscheme solarized
+set termguicolors
 set background=dark
+let g:solarized_termcolors = 256
+silent! colorscheme solarized
 
-" Set ultisnips triggers
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<C-d>"
-let g:UltiSnipsJumpBackwardTrigger="<C-a>"
-let g:UltiSnipsUsePythonVersion = 3
-
-" Load file dependent plugins
-filetype plugin on
-
-" Persistent undo
-set undofile                    " Save undo's after file closes
-set undodir=~/.config/nvim/undo " Where to save undo histories
-set undolevels=1000             " How many undos
-set undoreload=10000            " Number of lines to save for undo
-
-" Highlight the 80th column
-set colorcolumn=80
-
-" Highlight the cursor column
-set cursorcolumn
-
-" Change tabs to spaces, set tab to two spaces
-set et ts=2 sw=2 softtabstop=2
-
-" Pokazuj numery wierszy
 set number
-
-" Podświetlaj aktualny wiersz
-set cul
-
-" Nie zawijaj wierszy
+set cursorline
+set cursorcolumn
 set nowrap
+set colorcolumn=80
+set signcolumn=yes
+set laststatus=3
 
-" Podświetlenie przy szukaniu
-set hlsearch
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'solarized'
 
-" Incremental search
-set incsearch
+" -----------------------------------------------------------------------------
+" Editing behaviour
+" -----------------------------------------------------------------------------
 
-" When pattern ccontains only a-z; case does not matter
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+
 set ignorecase
-
-" Disable folding
-set nofoldenable
-
-" When pattern constains any of A-Z; case matters
 set smartcase
-
-" Show matching
+set incsearch
+set hlsearch
 set showmatch
-
-" Match < and > too
 set matchpairs+=<:>
+set matchtime=2
 
-" Decrease maching time
-set matchtime=4
+set nofoldenable
+set splitbelow
+set splitright
+set scrolloff=5
+set sidescrolloff=5
 
-" Omnicomplete keybinding change from Ctrl+x Ctrl+o to Ctrl+space
-inoremap <Nul> <C-x><C-o>
-inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
-  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+set updatetime=250
+set timeoutlen=300
 
-inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
-  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+" Native popup / omnifunction completion.
+set completeopt=menuone,noselect,popup
+set pumheight=12
 
-" Specify the completion sources
-set complete=.,w,b,i,d,]
-set completeopt=longest,menuone
+" -----------------------------------------------------------------------------
+" Persistent undo
+" -----------------------------------------------------------------------------
 
-" Specify the completion look
-set completeopt=menu,preview
+let s:undo_dir = stdpath('state') . '/undo'
 
-" Show tag-name and search pattern
-set showfulltag
-
-" Complete all tags
-set taglength=0
-
-" Change the Omnicomplete background and font
-:hi Pmenu ctermfg=white ctermbg=darkgrey guibg=#ffffff
-:hi PmenuSel ctermfg=7 ctermbg=4 guibg=#555555 guifg=#ffffff
-
-" Enable Omnicomplete
-set omnifunc=syntaxcomplete#Complete
-
-" Spellcheck when F7 pressed
-set spelllang=pl,en
-map <silent><F7> :setlocal spell!<CR>
-imap <silent><F7> <ESC>:setlocal spell!<CR>i<right>
-
-" Multi indent with > and <
-vnoremap < <gv
-vnoremap > >gv
-
-" Move lines up and down with <S-Up> and <S-Down>
-inoremap <S-Up> <Esc>:m -2<CR>i
-inoremap <S-Down> <Esc>:m +1<CR>i
-nnoremap <S-Up> :m -2<CR>
-nnoremap <S-Down> :m +1<CR>
-
-
-" If file is read only disallow editing
-au BufReadPost * :call CheckReadonly()
-function! CheckReadonly()
-    if version >= 600
-        if &readonly
-            setlocal nomodifiable
-        endif
-    endif
-endfunction
-
-" Open file in Insert mode
-autocmd BufNewFile * startinsert
-
-" Return to the last edited file position
-if has("autocmd")
-	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+if !isdirectory(s:undo_dir)
+call mkdir(s:undo_dir, 'p', 0700)
 endif
 
-" Remove trailing whitespace on save
-autocmd BufWritePre * :%s/\s\+$//e
+let &undodir = s:undo_dir
 
-" Different filetype-based configs
+set undofile
+set undolevels=1000
+set undoreload=10000
 
-" HTML configs
-autocmd FileType html set et ts=2 sw=2 softtabstop=2 nocindent
+" -----------------------------------------------------------------------------
+" Plugin configuration
+" -----------------------------------------------------------------------------
 
-" Python configs
-autocmd FileType python set et ts=4 sw=4 softtabstop=4
+" UltiSnips
+let g:UltiSnipsExpandTrigger = '<Tab>'
+let g:UltiSnipsJumpForwardTrigger = '<C-d>'
+let g:UltiSnipsJumpBackwardTrigger = '<C-a>'
+let g:UltiSnipsUsePythonVersion = 3
+let g:UltiSnipsEditSplit = 'vertical'
 
-" Markdown configs
-autocmd FileType markdown set textwidth=80
+" NERDTree
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeShowHidden = 1
 
-" Highlight everything above the 80th column
-autocmd FileType python match ErrorMsg '\%>80v.\+'
+" vim-markdown
+let g:vim_markdown_folding_disabled = 1
 
-" X clipboard support
-function! ClipboardYank()
-  call system('xclip -i -selection clipboard', @@)
+" vim-gnupg
+let g:GPGUseAgent = 1
+let g:GPGPreferSymmetric = 0
+let g:GPGPreferArmor = 1
+let g:GPGUsePipes = 1
+let g:GPGExecutable = 'gpg'
+
+" -----------------------------------------------------------------------------
+" Key mappings
+" -----------------------------------------------------------------------------
+
+" Navigation
+nnoremap <silent> <C-p> :CtrlP<CR>
+nnoremap <silent> <leader>f :CtrlP<CR>
+nnoremap <silent> <leader>b :CtrlPBuffer<CR>
+
+nnoremap <silent> <leader>n :NERDTreeToggle<CR>
+nnoremap <silent> <leader>N :NERDTreeFind<CR>
+
+" Spell checking
+set spelllang=pl,en
+nnoremap <silent> <F7> :setlocal spell!<CR>
+inoremap <silent> <F7> <C-o>:setlocal spell!<CR>
+
+" Ctrl-Space commonly arrives as NUL in terminal Neovim.
+" LSP automatically sets omnifunc for attached buffers.
+inoremap <silent><expr> <Nul> pumvisible()
+\ ? "<C-n>"
+\ : "<C-x><C-o>"
+
+" Keep visual selection after indentation.
+xnoremap < <gv
+xnoremap > >gv
+
+" Move lines with Shift-Up / Shift-Down.
+nnoremap <S-Up> :move -2<CR>==
+nnoremap <S-Down> :move +1<CR>==
+
+inoremap <S-Up> <Esc>:move -2<CR>==gi
+inoremap <S-Down> <Esc>:move +1<CR>==gi
+
+xnoremap <S-Up> :move '<-2<CR>gv=gv
+xnoremap <S-Down> :move '>+1<CR>gv=gv
+
+" -----------------------------------------------------------------------------
+" Native LSP mappings
+" -----------------------------------------------------------------------------
+
+nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
+
+nnoremap <silent> <F2> <cmd>lua vim.lsp.buf.rename()<CR>
+nnoremap <silent> <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
+xnoremap <silent> <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
+
+nnoremap <silent> <leader>e <cmd>lua vim.diagnostic.open_float()<CR>
+nnoremap <silent> [d <cmd>lua vim.diagnostic.jump({ count = -1, float = true })<CR>
+nnoremap <silent> ]d <cmd>lua vim.diagnostic.jump({ count = 1, float = true })<CR>
+
+command! -bar Format lua vim.lsp.buf.format({ async = true })
+
+" -----------------------------------------------------------------------------
+" Commands and autocmds
+" -----------------------------------------------------------------------------
+
+function! TrimWhitespace() abort
+let l:view = winsaveview()
+silent! keeppatterns %s/\s+$//e
+call winrestview(l:view)
 endfunction
-function! ClipboardPaste()
-  let @@ = system('xclip -o -selection clipboard')
-endfunction
 
-vnoremap <silent> y y:call ClipboardYank()<cr>
-vnoremap <silent> d d:call ClipboardYank()<cr>
-nnoremap <silent> p :call ClipboardPaste()<cr>p
-set clipboard=unnamedplus
+command! TrimWhitespace call TrimWhitespace()
 
-" TEX configs
+augroup user_config
+autocmd!
 
-" Break and wrap lines when editing TEX files
-function! TEXmode()
-  setlocal linebreak
-  setlocal wrap
-endfunction
-au FileType plaintex call TEXmode()
+" Restore the last cursor position.
+autocmd BufReadPost *
+\ if line("'"") > 1 && line("'"") <= line("$") |
+\   normal! g`" |
+\ endif
 
-" GPG settings
-let g:GPGUseAgent=1
-let g:GPGPreferSymmetric=0
-let g:GPGPreferArmor=1
-let g:GPGUsePipes=1
-let g:GPGExecutable="gpg2 --trust-model always"
+" Preserve your preference for editing new files immediately.
+autocmd BufNewFile * startinsert
+
+" Language-specific indentation.
+autocmd FileType python
+\ setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+
+autocmd FileType html,css,javascript,typescript,json,yaml
+\ setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+
+autocmd FileType make setlocal noexpandtab
+
+" Writing formats.
+autocmd FileType markdown setlocal textwidth=80
+autocmd FileType plaintex,tex setlocal linebreak wrap
+augroup END
+
+" -----------------------------------------------------------------------------
+" Native LSP server activation
+"
+" Install the external server programs separately. Missing servers are harmless:
+" Neovim simply will not attach them to a matching buffer.
+" -----------------------------------------------------------------------------
+
+if isdirectory(expand('~/.config/nvim/plugged/nvim-lspconfig'))
+silent! lsp enable ansiblels
+silent! lsp enable bashls
+silent! lsp enable clangd
+silent! lsp enable gopls
+silent! lsp enable jsonls
+silent! lsp enable lua_ls
+silent! lsp enable pyright
+silent! lsp enable rust_analyzer
+silent! lsp enable ts_ls
+silent! lsp enable yamlls
+endif
+
