@@ -1,49 +1,64 @@
 [core]
-	editor = nvim
-	autocrlf = input
-	safecrlf = true
-[push]
-	default = simple
-	gpgSign = if-asked
-[diff]
-	tool = meld
-	algorithm = histogram
-[difftool "meld"]
-	cmd = meld "$LOCAL" "$REMOTE"
-[mergetool]
-	keepBackup = false
-[merge]
-	conflictstyle = diff3
-	tool = meld
-	ff = only
-[mergetool]
-	keepBackup = false
-[mergetool "meld"]
-	cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
-[alias]
-	cleanup = !git branch --merged master | grep -v master | xargs -n 1 git branch -d
-	ignore = !git update-index --assume-unchanged
-	deignore = !git update-index --no-assume-unchanged
-	ignored = !git ls-files -v | grep "^[[:lower:]]"
-	wat = log --graph --decorate --oneline -15
+editor = nvim
+autocrlf = input
+safecrlf = true
+
 [user]
-	name = Paweł Jan Czochański
-	signingkey = 20810F57B5910162
+name = Paweł Jan Czochański
+signingkey = ~/.ssh/id_ed25519_sk.pub
+useConfigOnly = true
+
 [gpg]
-	program = gpg2
-[color]
-	ui = true
-[transfer]
-	fsckObjects = true
-[receive]
-	fsckObjects = false
-[fetch]
-	fsckObjects = false
-	ui = true
-	parallel = 0
+format = ssh
+
 [commit]
-	gpgsign = true
+gpgsign = true
+
 [tag]
-	gpgsign = true
+gpgsign = true
+sort = version:refname
+
+[push]
+default = simple
+gpgSign = if-asked
+followTags = true
+autoSetupRemote = true
+
 [pull]
-	ff = only
+ff = only
+
+[merge]
+ff = only
+conflictstyle = zdiff3
+tool = meld
+
+[mergetool]
+keepBackup = false
+
+[mergetool "meld"]
+cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
+
+[diff]
+tool = meld
+algorithm = histogram
+colorMoved = zebra
+colorMovedWS = allow-indentation-change
+
+[difftool "meld"]
+cmd = meld "$LOCAL" "$REMOTE"
+
+[fetch]
+prune = true
+writeCommitGraph = true
+
+[transfer]
+fsckObjects = true
+
+[rerere]
+enabled = true
+
+[status]
+showStash = true
+
+[color]
+ui = true

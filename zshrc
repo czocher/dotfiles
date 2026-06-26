@@ -4,8 +4,12 @@ ZSH_THEME="agnoster"
 # Hide the PS1 user information when unnecessary
 DEFAULT_USER="czocher"
 
+# Configure the ssh-agent plugin
+zstyle :omz:plugins:ssh-agent ssh-add-args -K
+zstyle :omz:plugins:ssh-agent identities id_ed25519_sk
+
 # Plugin configuration for oh-my-zsh
-plugins=(git gpg-agent pass web-search kate colored-man-pages virtualenvwrapper virtualenv)
+plugins=(git ssh-agent web-search kate colored-man-pages virtualenvwrapper virtualenv)
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -19,14 +23,6 @@ alias gcc='gcc -Wall -Wextra -pedantic'
 alias vim='nvim'
 alias python='ipython3'
 alias gpg='gpg2'
-alias restart_pcscd='sudo systemctl restart pcscd'
 
 # Configure command line tools to use English (has to be in zshrc)
 export LC_MESSAGES='en_GB'
-
-# Show emoji box when in toolbox context
-prompt_context() {
-  if [[ -f /run/.containerenv && -f /run/.toolboxenv ]]; then
-    prompt_segment black default '⛶'
-  fi
-}

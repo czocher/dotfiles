@@ -2,10 +2,6 @@
 BINARIES=( ~/.bin/ ~/Programy/*/bin ~/Programy/* ) 2> /dev/null
 [ ${#BINARIES[@]} -ne 0 ] && path+=( $BINARIES )
 
-# Configure restic
-export RESTIC_REPOSITORY='sftp:czocher@badger.internal:/home/restic'
-export RESTIC_PASSWORD_COMMAND='gpg --decrypt --quiet /home/czocher/.backup_password.asc'
-
 # Set XDG to defaults if not set
 [ -z "$XDG_DATA_HOME" ] && export XDG_DATA_HOME="$HOME/.local/share"
 [ -z "$XDG_CONFIG_HOME" ] && export XDG_CONFIG_HOME="$HOME/.config"
