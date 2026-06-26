@@ -26,3 +26,10 @@ alias gpg='gpg2'
 
 # Configure command line tools to use English (has to be in zshrc)
 export LC_MESSAGES='en_GB'
+
+# Show emoji box when in toolbox context
+prompt_context() {
+  if [[ -f /run/.containerenv && -f /run/.toolboxenv ]]; then
+    prompt_segment black default '⛶'
+  fi
+}

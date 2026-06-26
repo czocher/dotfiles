@@ -18,10 +18,3 @@ export TESTCONTAINERS_RYUK_DISABLED='true'
 
 # Configure CDPATH
 export CDPATH=~/:~/Projekty
-
-# Show emoji box when in toolbox context
-prompt_context() {
-  if [[ -f /run/.containerenv && -f /run/.toolboxenv ]]; then
-    prompt_segment black default '⛶'
-  fi
-}
