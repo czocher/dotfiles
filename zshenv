@@ -1,6 +1,14 @@
 # Add all bin paths from ~/Programy to $PATH
-BINARIES=( ~/.local/bin ~/.bin/ ~/Programy/*/bin ~/Programy/* ) 2> /dev/null
-[ ${#BINARIES[@]} -ne 0 ] && path+=( $BINARIES )
+typeset -U path PATH
+
+path+=(
+  "$HOME/.local/bin"
+  "$HOME/.bin"
+  "$HOME/Programy"/*/bin(/N)
+  "$HOME/Programy"/*(/N)
+)
+
+export PATH
 
 # Set XDG to defaults if not set
 [ -z "$XDG_DATA_HOME" ] && export XDG_DATA_HOME="$HOME/.local/share"
@@ -15,6 +23,3 @@ export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
 
 # Disable Ryuk in testcontainers
 export TESTCONTAINERS_RYUK_DISABLED='true'
-
-# Configure CDPATH
-export CDPATH=~/:~/Projekty

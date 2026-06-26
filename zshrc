@@ -5,11 +5,20 @@ ZSH_THEME="agnoster"
 DEFAULT_USER="czocher"
 
 # Configure the ssh-agent plugin
-zstyle :omz:plugins:ssh-agent ssh-add-args -K
-zstyle :omz:plugins:ssh-agent identities id_ed25519_sk
+zstyle :omz:plugins:ssh-agent quiet yes identities id_ed25519_sk
+
+# Better completion UX.
+zstyle ':completion:*' menu select
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*:descriptions' format '%F{yellow}-- %d --%f'
+
+# Small quality-of-life options.
+setopt INTERACTIVE_COMMENTS
+setopt NO_FLOW_CONTROL
 
 # Plugin configuration for oh-my-zsh
-plugins=(git ssh-agent web-search kate colored-man-pages virtualenvwrapper virtualenv)
+plugins=(git ssh-agent web-search kate colored-man-pages virtualenvwrapper virtualenv history-substring-search)
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -33,3 +42,9 @@ prompt_context() {
     prompt_segment black default '⛶'
   fi
 }
+
+# Configure CDPATH
+cdpath=(
+  "$HOME"
+  "$HOME/Projekty"
+)
